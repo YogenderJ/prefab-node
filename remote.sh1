@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+cd /home/ubuntu/Node_Backend/
+unzip -o node.zip -d /home/ubuntu/Node_Backend
+for pid in $(lsof -t -i:3100); do                        kill -9 $pid;                done
+nohup node index.js > /dev/null 2>&1 &
